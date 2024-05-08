@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển 4 cạnh</title>
+</head>
+<body>
+<img src="pikachu.jpg" style="width: 150px; height: 200px; position: absolute; left: 100px; top:100px" id="pi"/></body>
+<script>
+    let s =3;
+    let s1 = 3;
+    setInterval(() => {
+        pikachu = document.getElementById('pi');
+        pikachu.style.left = parseInt(pikachu.style.left) + s + 'px';
+        pikachu.style.top = parseInt(pikachu.style.top) + s1 + 'px';
+        if (parseInt(pikachu.style.left) > window.innerWidth - pikachu.width) {
+            s = -3;
+        }
+        if (parseInt(pikachu.style.left) <= 0) {
+            s = 3;
+        }
+        if (parseInt(pikachu.style.top) > window.innerHeight - pikachu.height) {
+            s1 = -3;
+        }
+        if (parseInt(pikachu.style.top) <= 0) {
+            s1 = 3;
+        }
+    }, 1)
+</script>
+</html>
