@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển HCN</title>
+</head>
+<body>
+<a href="index.html">Link di chuyển từ trai qua phải</a>
+<img src="pikachu.jpg" style="width: 150px; height: 200px; position: absolute; left: 0px; top:0px" id="pi"/></body>
+<script>
+    let s = 3;
+    let move = 'right'; // hướng đi lúc đầu
+    setInterval (() => {
+        let pikachu = document.getElementById('pi');
+        if (move === 'right'  && parseInt(pikachu.style.left) < window.innerWidth - pikachu.width) {
+            pikachu.style.left = parseInt(pikachu.style.left) + s + 'px';
+        } else if (move === 'right') {
+            move = 'down';
+        }
+        if (move === 'down'  && parseInt(pikachu.style.top) < window.innerHeight - pikachu.height) {
+            pikachu.style.top = parseInt(pikachu.style.top) + s + 'px';
+        } else if (move === 'down') {
+            move = 'left';
+        }
+        if (move === 'left'  && parseInt(pikachu.style.left) > 0) {
+            pikachu.style.left = parseInt(pikachu.style.left) - s + 'px';
+        } else if (move === 'left') {
+            move = 'up';
+        }
+
+        if (move === 'up'  && parseInt(pikachu.style.top) > 0) {
+            pikachu.style.top = parseInt(pikachu.style.top) - s + 'px';
+        } else if (move === 'up') {
+            move = 'right';
+        }
+    },1)
+</script>
+</html>

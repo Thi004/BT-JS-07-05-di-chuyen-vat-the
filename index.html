@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển từ trái qua phải</title>
+</head>
+<body>
+<a href="moveHCN.html">link Di chuyển hình chữ nhật</a>
+<img src="pikachu.jpg" style="width: 150px; height: 200px; position: absolute; left: -100px; top: 100px" id="pi"/></body>
+<script>
+let s = 3;
+    setInterval (() => {
+        let pikachu = document.getElementById('pi');
+        pikachu.style.left = parseInt(pikachu.style.left) + s + 'px';
+       if (parseInt(pikachu.style.left) >= window.innerWidth) {
+           pikachu.style.left = -100 + 'px';
+       }
+    },1)
+</script>
+</html>
