@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<img src="pikachu.jpg" style="width: 150px; height: 200px; position: absolute; left: 0; top:0" id="v"/></body>
+<script>
+    // Di chuyển HCN cách 2
+    let v = 3;
+    let v2 = 3;
+
+    function sangPhai() {
+        let son = document.getElementById('v');
+        son.style.left = parseInt(son.style.left) + v + 'px';
+        let viTri = parseInt(son.style.left);
+        let viTriTop = parseInt(son.style.top);
+        if (viTri > window.innerWidth - son.width && viTriTop >= 0) {
+            v = 0;
+            v2 = 3;
+            son.style.top = viTriTop + v2 + 'px';
+        }
+        if (parseInt(son.style.top) > window.innerHeight - son.height) {
+            v2 = 0;
+            v = -3;
+        }
+
+        if (parseInt(son.style.left) <= 0 && parseInt(son.style.top) >= 0) {
+            v = 0;
+            v2 = -3;
+            son.style.top = viTriTop + v2 + 'px';
+        }
+
+        if (parseInt(son.style.left) <= 0 && parseInt(son.style.top) <= 0) {
+            v = 3;
+            v2 = 0;
+        }
+    }
+
+    setInterval(function () {
+        sangPhai();
+    }, 1)
+</script>
+</body>
+</html>

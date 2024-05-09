@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển trái qua phải và đi ngược lại</title>
+</head>
+<body>
+<img src="pikachu.jpg" style="width: 150px; height: 200px; position: absolute; left: 0px; top:100px" id="pi"/></body>
+<script>
+    let s = 3;
+    setInterval(() => {
+        let pikachu = document.getElementById('pi');
+        pikachu.style.left = parseInt(pikachu.style.left) + s +'px';
+        if (parseInt(pikachu.style.left) > window.innerWidth - pikachu.width) {
+            s = -3;
+        } else if (parseInt(pikachu.style.left) <= 0) {
+            s = 3;
+        }
+    },1)
+</script>
+</body>
+</html>
