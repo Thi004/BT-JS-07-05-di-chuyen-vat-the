@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<img src="pikachu.jpg" style="width: 150px; height: 200px; position: absolute; left: 100px; top:100px" id="pi"/></body>
+<script>
+    // Di chuyển HCN không chạm cạnh màn hình
+    let w = 3; // đặt là vận tốc đi ngang
+    let h = 0; // vận tốc đi dọc
+    let s = 0; // quãng đường đi
+    let pikachu = document.getElementById('pi');
+    setInterval(() => {
+
+        pikachu.style.left = parseInt(pikachu.style.left) + w + 'px';
+        pikachu.style.top = parseInt(pikachu.style.top) + h + 'px';
+        s += 3; // cứ 1ms đi được 3px
+        if (s >= 600 ) {
+            w = 0;
+            h = 3;
+        }
+        if (s >= 900) {
+            w = -3;
+            h = 0;
+        }
+        if (s >= 1500) {
+            w = 0;
+            h = -3;
+        }
+        if (s >= 1800) {
+            w = 3;
+            h = 0;
+            s = 0;
+        }
+    }, 1)
+
+</script>
+</html>

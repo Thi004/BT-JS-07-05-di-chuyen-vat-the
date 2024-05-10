@@ -10,7 +10,7 @@
     let s =3;
     let s1 = 3;
     setInterval(() => {
-        pikachu = document.getElementById('pi');
+        let pikachu = document.getElementById('pi');
         pikachu.style.left = parseInt(pikachu.style.left) + s + 'px';
         pikachu.style.top = parseInt(pikachu.style.top) + s1 + 'px';
         if (parseInt(pikachu.style.left) > window.innerWidth - pikachu.width) {
